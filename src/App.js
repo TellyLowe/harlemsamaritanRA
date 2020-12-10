@@ -9,7 +9,7 @@ class App extends Component {
             <div className="App">
                 <Navbar dark color="danger">
                 <div className="container">
-                    <NavbarBrand href="/">Harlem Maritan</NavbarBrand>
+                    <NavbarBrand href="/">Harlem Samaritan</NavbarBrand>
                 </div>
                 </Navbar>
             </div>
