@@ -1,0 +1,74 @@
+[debug] [2020-12-10T04:30:30.522Z] ----------------------------------------------------------------------
+[debug] [2020-12-10T04:30:30.523Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\u\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-12-10T04:30:30.524Z] CLI Version:   8.11.2
+[debug] [2020-12-10T04:30:30.524Z] Platform:      win32
+[debug] [2020-12-10T04:30:30.524Z] Node Version:  v14.9.0
+[debug] [2020-12-10T04:30:30.525Z] Time:          Wed Dec 09 2020 23:30:30 GMT-0500 (Eastern Standard Time)
+[debug] [2020-12-10T04:30:30.525Z] ----------------------------------------------------------------------
+[debug] [2020-12-10T04:30:30.525Z] 
+[debug] [2020-12-10T04:30:30.530Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-10T04:30:30.531Z] > authorizing via signed-in user
+[debug] [2020-12-10T04:30:30.531Z] [iam] checking project harlemsamaritan-cf6a5 for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2020-12-10T04:30:30.533Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/harlemsamaritan-cf6a5:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2020-12-10T04:30:30.951Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 10 Dec 2020 04:30:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=250","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-10T04:30:30.953Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/harlemsamaritan-cf6a5  
+ 
+[debug] [2020-12-10T04:30:31.278Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 10 Dec 2020 04:30:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-10T04:30:31.278Z] [WARNING] Unable to fetch default resources. Falling back to project id (harlemsamaritan-cf6a5)
+[info] 
+[info] === Deploying to 'harlemsamaritan-cf6a5'...
+[info] 
+[info] i  deploying database, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2020-12-10T04:30:31.284Z] >>> HTTP REQUEST PUT https://harlemsamaritan-cf6a5.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+[debug] [2020-12-10T04:30:31.571Z] <<< HTTP RESPONSE 404 {"server":"nginx","date":"Thu, 10 Dec 2020 04:30:31 GMT","content-type":"application/json; charset=utf-8","content-length":"32","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[debug] [2020-12-10T04:30:31.571Z] <<< HTTP RESPONSE BODY {
+  "error" : "404 Not Found"
+}
+
+[error] 
+[error] Error: Unexpected error while deploying database rules.
+[debug] [2020-12-10T04:33:09.156Z] ----------------------------------------------------------------------
+[debug] [2020-12-10T04:33:09.157Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\u\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-12-10T04:33:09.158Z] CLI Version:   8.11.2
+[debug] [2020-12-10T04:33:09.158Z] Platform:      win32
+[debug] [2020-12-10T04:33:09.158Z] Node Version:  v14.9.0
+[debug] [2020-12-10T04:33:09.158Z] Time:          Wed Dec 09 2020 23:33:09 GMT-0500 (Eastern Standard Time)
+[debug] [2020-12-10T04:33:09.159Z] ----------------------------------------------------------------------
+[debug] [2020-12-10T04:33:09.159Z] 
+[debug] [2020-12-10T04:33:09.164Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-10T04:33:09.165Z] > authorizing via signed-in user
+[debug] [2020-12-10T04:33:09.165Z] [iam] checking project harlemsamaritan-cf6a5 for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]
+[debug] [2020-12-10T04:33:09.167Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/harlemsamaritan-cf6a5:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update"]}
+[debug] [2020-12-10T04:33:09.537Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 10 Dec 2020 04:33:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=169","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-10T04:33:09.544Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/harlemsamaritan-cf6a5  
+ 
+[debug] [2020-12-10T04:33:09.883Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 10 Dec 2020 04:33:09 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-12-10T04:33:09.885Z] [WARNING] Unable to fetch default resources. Falling back to project id (harlemsamaritan-cf6a5)
+[info] 
+[info] === Deploying to 'harlemsamaritan-cf6a5'...
+[info] 
+[info] i  deploying database, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2020-12-10T04:33:09.904Z] >>> HTTP REQUEST PUT https://harlemsamaritan-cf6a5.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
+[debug] [2020-12-10T04:33:10.211Z] <<< HTTP RESPONSE 404 {"server":"nginx","date":"Thu, 10 Dec 2020 04:33:09 GMT","content-type":"application/json; charset=utf-8","content-length":"32","connection":"keep-alive","access-control-allow-origin":"*","cache-control":"no-cache","strict-transport-security":"max-age=31556926; includeSubDomains; preload"}
+[debug] [2020-12-10T04:33:10.211Z] <<< HTTP RESPONSE BODY {
+  "error" : "404 Not Found"
+}
+
+[error] 
+[error] Error: Unexpected error while deploying database rules.
