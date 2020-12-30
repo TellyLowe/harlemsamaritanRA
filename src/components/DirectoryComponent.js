@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
-
-// function RenderDirectoryItem({group}) {
-//     return (
-//         <Card>
-//             <CardImg width="100%" src={group.image} alt={group.name} />
-//                 <CardImgOverlay>
-//                     <CardTitle>{group.name}</CardTitle>
-//                 </CardImgOverlay>
-//         </Card>
-//     );
-// }
+import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import GroupInfo from './GroupInfo';
 
 class Directory extends Component {
     constructor(props) {
@@ -22,20 +12,6 @@ class Directory extends Component {
 
     onGroupSelect(group) {
         this.setState({ selectedGroup: group })
-    }
-
-    renderSelectedGroup(group) {
-        if (group) {
-            return (
-                <Card>
-                    <CardImg top src={group.image} alt={group.name} />
-                    <CardBody>
-                        <CardTitle>{group.name}</CardTitle>
-                        <CardText>{group.description}</CardText>
-                    </CardBody>
-                </Card>
-            )
-        }
     }
 
     render() {
@@ -54,24 +30,10 @@ class Directory extends Component {
 
         return (
             <div className="container">
-                {/* <div className="row">
-                        <div className="col">
-                            <Breadcrumb>
-                                <BreadcrumbItem></BreadcrumbItem>
-                                <BreadcrumbItem active>Directory</BreadcrumbItem>
-                            </Breadcrumb>
-                            <h2>Directory</h2>
-                            <hr />
-                        </div>
-                    </div> */}
                 <div className="row">
                     {directory}
                 </div>
-                <div className="row">
-                    <div className="col-md-5 m-1">
-                        {this.renderSelectedGroup(this.state.selectedGroup)}
-                    </div>
-                </div>
+                <GroupInfo group={this.state.selectedGroup}/>
             </div>
         );
     }
