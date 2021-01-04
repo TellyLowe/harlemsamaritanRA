@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
-import Directory from './components/DirectoryComponent';
 import firebase from "./firebase";
-import { GROUPS } from './shared/groups';
 import Main from './components/MainComponent';
 import './App.css';
 

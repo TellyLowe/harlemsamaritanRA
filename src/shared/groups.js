@@ -1,5 +1,4 @@
 import wakeWomen from '../Images/wokeWomen.jpg';
-import logo from '../Images/logo.jpg';
 import McLogo from '../Images/A Motherscry_logo.jpg'
 
 export const GROUPS = [

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import Directory from './DirectoryComponent';
 import GroupInfo from './GroupInfo';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 import { GROUPS } from '../shared/groups';
 
 class Main extends Component {
@@ -20,13 +21,10 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Navbar dark color="danger">
-                    <div className="container">
-                        <NavbarBrand href="/">Harlem Samaritan</NavbarBrand>
-                    </div>
-                </Navbar>
+                <Header />
                 <Directory groups={this.state.groups} onClick={groupId => this.onGroupSelect(groupId)}/>
                 <GroupInfo group={this.state.groups.filter(group => group.id === this.state.selectedGroup)[0]} />
+                <Footer />
             </div>
         );
     };

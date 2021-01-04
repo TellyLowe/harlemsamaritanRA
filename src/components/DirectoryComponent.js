@@ -1,29 +1,19 @@
-import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
-import GroupInfo from './GroupInfo';
+import React from 'react';
+import { Card, CardImg } from 'reactstrap';
 
-class Directory extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedGroup: null
-        }
-    }
+function RenderDirectoryItem({ group, onClick }) {
+    return (
+        <Card onClick={() => onClick(group.id)}>
+            <CardImg width="100%" src={group.image} alt={group.name} />
+        </Card>
+    )
+}
+function Directory(props) {
 
-    onGroupSelect(group) {
-        this.setState({ selectedGroup: group })
-    }
-
-    render() {
-        const directory = this.props.groups.map(group => {
+        const directory = props.groups.map(group => {
             return (
                 <div key={group.id} className="col-md-5 m-1">
-                    <Card onClick={() => this.props.onClick(group.id)}>
-                        <CardImg width="100%" src={group.image} alt={group.name} />
-                        {/* <CardImgOverlay>
-                            <CardTitle>{group.name}</CardTitle>
-                        </CardImgOverlay> */}
-                    </Card>
+                    <RenderDirectoryItem group={group} onClick={props.onClick} />
                 </div>
             )
         });
@@ -36,5 +26,5 @@ class Directory extends Component {
             </div>
         );
     }
-}
+
 export default Directory;

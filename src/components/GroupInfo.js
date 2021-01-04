@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class GroupInfo extends Component {
-    renderGroup(group) {
+function RenderGroup({group}) {
         return (
             <div className="col-md-5">
                 <Card>
@@ -15,7 +14,7 @@ class GroupInfo extends Component {
             </div>
         )
     }
-    renderComments(comments) {
+    function RenderComments({comments}) {
         if (comments) {
             return (
                 <div className="col-md-5 m-1">
@@ -33,18 +32,18 @@ class GroupInfo extends Component {
         }
         return <div />
     }
-    render() {
-        if (this.props.group) {
+    function GroupInfo(props) {
+        if (props.group) {
             return (
                 <div className="container">
                     <div className="row">
-                        {this.renderGroup(this.props.group)}
-                        {this.renderComments(this.props.group.comments)}
+                        <RenderGroup group={props.group} />
+                        <RenderComments comments={props.group.comments} />
                     </div>
                 </div>
             );
         }
         return <div />;
     }
-}
+
 export default GroupInfo;
