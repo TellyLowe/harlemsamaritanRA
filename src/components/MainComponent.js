@@ -1,29 +1,36 @@
 import React, { Component } from 'react';
+import Home from './HomeComponent';
 import Directory from './DirectoryComponent';
-import GroupInfo from './GroupInfo';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import { GROUPS } from '../shared/groups';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             groups: GROUPS,
-            selectedGroup: null
         };
     }
 
-    onGroupSelect(groupId) {
-        this.setState({selectedGroup: groupId});
-    }
-
     render() {
+
+        const HomePage = () => {
+            return(
+                <Home />
+            );
+        }
+
         return (
             <div>
                 <Header />
-                <Directory groups={this.state.groups} onClick={groupId => this.onGroupSelect(groupId)}/>
-                <GroupInfo group={this.state.groups.filter(group => group.id === this.state.selectedGroup)[0]} />
+                <Switch>
+                    <Route path='/home' component={HomePage} />
+                    <Route exact path='/directory' render={() => <Directory groups={this.state.groups} />} />
+                    <Redirect to='/home' />
+                </Switch>
                 <Footer />
             </div>
         );
