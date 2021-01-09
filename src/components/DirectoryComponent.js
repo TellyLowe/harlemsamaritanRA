@@ -1,10 +1,13 @@
 import React from 'react';
 import { Card, CardImg } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
-function RenderDirectoryItem({ group, onClick }) {
+function RenderDirectoryItem({ group }) {
     return (
         <Card>
-            <CardImg width="100%" src={group.image} alt={group.name} />
+            <Link to={`/directory/${group.id}`}>
+                <CardImg width="100%" src={group.image} alt={group.name} />
+            </Link>
         </Card>
     )
 }

@@ -38,7 +38,7 @@ function RenderGroup({group}) {
                 <div className="container">
                     <div className="row">
                         <RenderGroup group={props.group} />
-                        <RenderComments comments={props.group.comments} />
+                        <RenderComments comments={props.comments} />
                     </div>
                 </div>
             );

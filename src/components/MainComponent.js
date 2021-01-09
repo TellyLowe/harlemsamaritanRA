@@ -3,6 +3,7 @@ import Home from './HomeComponent';
 import Directory from './DirectoryComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
+import GroupInfo from './GroupInfo'
 import { GROUPS } from '../shared/groups';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Contact from './ContactComponent';
@@ -34,11 +35,21 @@ class Main extends Component {
             );
         }
 
+        const GroupWithId = ({match}) => {
+            return (
+                <GroupInfo 
+                    group={this.state.groups.filter(group => group.id === +match.params.groupId)[0]}
+                    comments={this.state.comments.filter(comment => comment.groupId === +match.params.groupId)}
+                />
+            );
+        };
+
         return (
             <div>
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
+                    <Route path='/directory/:groupId' component={GroupWithId} />
                     <Route exact path='/directory' render={() => <Directory groups={this.state.groups} />} />
                     <Route exact path='/contactus' component={Contact} />
                     <Redirect to='/home' />
