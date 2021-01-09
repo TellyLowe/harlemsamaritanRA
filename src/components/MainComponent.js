@@ -3,7 +3,8 @@ import Home from './HomeComponent';
 import Directory from './DirectoryComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
-import GroupInfo from './GroupInfo'
+import GroupInfo from './GroupInfo';
+import About from './AboutComponent';
 import { GROUPS } from '../shared/groups';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Contact from './ContactComponent';
@@ -50,6 +51,7 @@ class Main extends Component {
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route path='/directory/:groupId' component={GroupWithId} />
+                    <Route exact path='/aboutus' render={() => <About partners={this.state.partners} />} /> 
                     <Route exact path='/directory' render={() => <Directory groups={this.state.groups} />} />
                     <Route exact path='/contactus' component={Contact} />
                     <Redirect to='/home' />
